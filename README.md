@@ -5,7 +5,7 @@ USAGE: MlMagRes.py STA NET START STOP (YYYYMMDD)
 
 STA may be a filename (longer than 5 chars) containing STA NET pairs
 
-The three programs, MlMagRes, res_time_scatter and res_distance_scatter are used in combination to determine local magntude station corrections. 'MlMagRes' accesses the data in the PNSN sarchdb (secondary database to not load the primary during big requests) for basic magnitude information from a given station, computes averages and means of stored magnitude residuals (along with some statistics).  The negative of the average should then be put into the 'corr' value of the "stacorrections" table as described in https://pnsndocs.ess.washington.edu/LOCAL/WikiDocs/index.php/Ml_Corrections
+The three programs, MlMagRes, res_time_scatter and res_distance_scatter are used in combination to determine local magntude station corrections. 'MlMagRes' accesses the data in the PNSN sarchdb (must have access to this secondary database, used to not impact the primary during big requests) for basic magnitude information from a given station, computes averages and means of stored magnitude residuals (along with some statistics).  The negative of the average should then be put into the 'corr' value of the "stacorrections" table as described in https://pnsndocs.ess.washington.edu/LOCAL/WikiDocs/index.php/Ml_Corrections
 
 Giving the program a single 'STA NET' pair will also list station information for each event selected and then the summary information. If data exists for EHZ channels it is handeled separately in the summary information, otherwise all horizontal data (BH, HH, EN, HN) are all lumped together. Finally a plot is produced of the distribution of residules color coded by raw - yellow, corrected - blue and overlap (both) - green.
 
